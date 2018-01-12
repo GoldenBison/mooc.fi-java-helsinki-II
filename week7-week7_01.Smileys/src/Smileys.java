@@ -3,18 +3,18 @@ public class Smileys {
     private static void printWithSmileys(String characterString) {
         int length = characterString.length();
         
-        printStringNTimes(":)", length);
+        printSmiley(length / 2 + 3);
         if (length % 2 == 0) {
             System.out.println(":) " + characterString + " :)");
         } else {
             System.out.println(":) " + characterString + "  :)");
         }
-        printStringNTimes(":)", length);
+        printSmiley(length / 2 + 3);
     }
     
-    private static void printStringNTimes(String string, int times) {
+    private static void printSmiley(int times) {
         for (int i = 0; i < times; i++) {
-            System.out.print(string);
+            System.out.print(":)");
         }
         
         System.out.println();
