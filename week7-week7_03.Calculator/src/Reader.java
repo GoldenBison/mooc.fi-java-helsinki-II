@@ -11,7 +11,7 @@ public class Reader {
         return scanner.nextLine();
     }
     
-    public int readInt() {
+    public int readInteger() {
         return Integer.parseInt(scanner.nextLine());
     }
 }
