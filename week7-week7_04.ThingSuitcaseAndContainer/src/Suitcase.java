@@ -2,20 +2,51 @@ import java.util.ArrayList;
 
 public class Suitcase {
     private ArrayList<Thing> things;
-    private int currWeight;
     private int maxWeight;
     
     public Suitcase(int maxWeight) {
         this.things = new ArrayList<Thing>();
-        this.currWeight = 0;
         this.maxWeight = maxWeight;
     }
     
     public void addThing(Thing thing) {
-        if (currWeight + thing.getWeight() < maxWeight) {
+        if (totalWeight() + thing.getWeight() < maxWeight) {
             things.add(thing);
-            currWeight += thing.getWeight();
         }
+    }
+    
+    public void printThings() {
+        System.out.println("Your suitcase contains the following things:");
+        
+        for (Thing thing : things) {
+            System.out.println(thing);  // Automatically calls "toString()"
+        }
+    }
+    
+    public int totalWeight() {
+        int totalWeight = 0;
+        
+        for (Thing thing : things) {
+            totalWeight += thing.getWeight();
+        }
+        
+        return totalWeight;
+    }
+    
+    public Thing heaviestThing() {
+        if (things.isEmpty()) {
+            return null;
+        }
+        
+        Thing heaviest = things.get(0);
+        
+        for (Thing thing : things) {
+            if (thing.getWeight() > heaviest.getWeight()) {
+                heaviest = thing;
+            }
+        }
+        
+        return heaviest;
     }
     
     @Override
@@ -34,7 +65,7 @@ public class Suitcase {
                 finalString += numOfThings + " things ";
                 break;
         }        
-        finalString += "(" + currWeight + " kg)";
+        finalString += "(" + totalWeight() + " kg)";
         
         return finalString;
     }
