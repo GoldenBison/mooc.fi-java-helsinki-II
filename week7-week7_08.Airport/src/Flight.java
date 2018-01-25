@@ -1,9 +1,9 @@
 public class Flight {
     private String departureCode;
-    private String arrivalCode;
+    private String destinationCode;
     
-    public Flight(String departureCode, String arrivalCode) {
+    public Flight(String departureCode, String destinationCode) {
         this.departureCode = departureCode;
-        this.arrivalCode = arrivalCode;
+        this.destinationCode = destinationCode;
     }
 }
