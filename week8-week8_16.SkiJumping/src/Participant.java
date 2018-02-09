@@ -14,4 +14,14 @@ public class Participant {
     public void addScore(int score) {
         scores.add(score);
     }
+    
+    public int totalScore() {
+        int total = 0;
+        
+        for (int score : scores) {
+            total += score;
+        }
+        
+        return total;
+    }
 }
