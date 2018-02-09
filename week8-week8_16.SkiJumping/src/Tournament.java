@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Tournament {
@@ -17,5 +18,13 @@ public class Tournament {
     
     public void nextRound() {
         round++;
+    }
+    
+    public int getRound() {
+        return round;
+    }
+    
+    public void sortParticipants() {
+        Collections.sort(participants);
     }
 }
