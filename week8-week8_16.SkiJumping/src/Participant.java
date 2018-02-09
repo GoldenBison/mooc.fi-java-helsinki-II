@@ -11,5 +11,7 @@ public class Participant {
         this.scores = new ArrayList<Integer>();
     }
     
-    
+    public void addScore(int score) {
+        scores.add(score);
+    }
 }
