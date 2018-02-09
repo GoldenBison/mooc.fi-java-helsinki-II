@@ -15,6 +15,7 @@ public class UserInterface {
     public void start() {
         System.out.println("Kumpula ski jumping week\n");
         addParticipants();
+        playTournament();
     }
     
     public void addParticipants() {
@@ -22,7 +23,7 @@ public class UserInterface {
                 + "an empty string brings you to the jumping phase.");
         
         while (true) {
-            System.out.print("Participant name: ");
+            System.out.print("  Participant name: ");
             String name = reader.nextLine();
             
             if (name.isEmpty()) {
@@ -34,12 +35,27 @@ public class UserInterface {
     }
     
     public void playTournament() {        
-        System.out.println("The tournament begins!\n");
-        System.out.print("Write jump to jump; otherwise you quit: ");
-        String userInput = reader.nextLine();
+        System.out.println("\nThe tournament begins!");
         
-        if (userInput.equals("jump")) {
-            System.out.println("");
+        while (true) {
+            System.out.print("\nWrite \"jump\" to jump; otherwise you quit: ");
+            String userInput = reader.nextLine();
+
+            if (userInput.equals("jump")) {
+                System.out.println("\nRound " + tournament.getRound() + "\n");
+                System.out.println("Jumping order:");
+                tournament.playRound();
+            } else {
+                break;
+            }
         }
+        
+        endTournament();
+    }
+    
+    public void endTournament() {
+        System.out.println("\nThanks!\n");
+        System.out.println("Tournament results:");
+        tournament.printFinalResults();
     }
 }
