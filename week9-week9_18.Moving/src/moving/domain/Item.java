@@ -21,7 +21,7 @@ public class Item implements Thing, Comparable<Item> {
     
     @Override
     public String toString() {
-        return name + "(" + volume + " dm^3)";
+        return name + " (" + volume + " dm^3)";
     }
     
     @Override

@@ -33,6 +33,4 @@ public class Box implements Thing {
         
         return volume;
     }
-    
-    
 }
