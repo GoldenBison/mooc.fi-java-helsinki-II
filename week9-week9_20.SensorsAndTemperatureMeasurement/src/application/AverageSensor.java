@@ -6,13 +6,19 @@ import java.util.List;
 public class AverageSensor implements Sensor {
     
     private List<Sensor> sensors;
+    private List<Integer> readings;
     
     public AverageSensor() {
         sensors = new ArrayList<Sensor>();
+        readings = new ArrayList<Integer>();
     }
 
     public void addSensor(Sensor additional) {
         sensors.add(additional);
+    }
+    
+    public List<Integer> readings() {
+        return readings;
     }
     
     @Override
@@ -42,12 +48,19 @@ public class AverageSensor implements Sensor {
 
     @Override
     public int measure() {
+        if (!isOn() || sensors.size() == 0) {
+            throw new IllegalStateException();
+        }
+        
         int total = 0;
         
         for (Sensor s : sensors) {
             total += s.measure();
         }
         
-        return total / sensors.size();
+        int average = total / sensors.size();
+        readings.add(average);
+        
+        return average;
     }
 }
