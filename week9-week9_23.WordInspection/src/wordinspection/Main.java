@@ -9,6 +9,5 @@ public class Main {
 
         File file = new File("src/shortList.txt");
         // all words are in file src/wordList.txt
-
     }
 }
