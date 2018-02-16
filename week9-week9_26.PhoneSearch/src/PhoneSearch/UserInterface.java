@@ -12,6 +12,7 @@ public class UserInterface {
     
     public void start() {
         printMenu();
+        getCommand();
     }
     
     public void printMenu() {
@@ -25,5 +26,30 @@ public class UserInterface {
                 + " 6 delete personal information\n"
                 + " 7 filtered listing\n"
                 + " x quit\n");
+    }
+    
+    public void getCommand() {
+        while (true) {
+            System.out.print("command: ");
+            String command = scanner.nextLine();
+            
+            if (command.equals("x")) {
+                break;
+            } else if (command.equals("1")) {
+                addNumber();
+            } else if (command.equals("2")) {
+                searchNumber();
+            } else if (command.equals("3")) {
+                searchPersonByNumber();
+            } else if (command.equals("4")) {
+                addAddress();
+            } else if (command.equals("5")) {
+                searchPersonalInfo();
+            } else if (command.equals("6")) {
+                deletePersonalInfo();
+            } else if (command.equals("7")) {
+                filteredListing();
+            }
+        }
     }
 }
