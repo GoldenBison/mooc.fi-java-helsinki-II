@@ -55,4 +55,29 @@ public class WordInspection {
         
         return words;
     }
+    
+    public List<String> palindromes() throws FileNotFoundException {
+        List<String> words = new ArrayList<String>();
+        Scanner reader = new Scanner(file, "UTF-8");
+        
+        while (reader.hasNext()) {
+            String word = reader.next();
+            int front = 0;
+            int back = word.length() - 1;
+            boolean isPalindrome = true;
+            
+            while (front < back) {
+                if (word.charAt(front) != word.charAt(back)) {
+                    isPalindrome = false;
+                    break;
+                }
+            }
+            
+            if (isPalindrome) {
+                words.add(word);
+            }
+        }
+        
+        return words;
+    }
 }
