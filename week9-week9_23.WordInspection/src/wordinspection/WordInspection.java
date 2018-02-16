@@ -40,4 +40,19 @@ public class WordInspection {
         
         return zWords;
     }
+    
+    public List<String> wordsEndingInL() throws FileNotFoundException {
+        List<String> words = new ArrayList<String>();
+        Scanner reader = new Scanner(file, "UTF-8");
+        
+        while (reader.hasNext()) {
+            String word = reader.next();
+            
+            if (word.endsWith("l")) {
+                words.add(word);
+            }
+        }
+        
+        return words;
+    }
 }
