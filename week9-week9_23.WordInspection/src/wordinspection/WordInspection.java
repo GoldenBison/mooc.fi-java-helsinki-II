@@ -71,9 +71,35 @@ public class WordInspection {
                     isPalindrome = false;
                     break;
                 }
+                front++;
+                back--;
             }
             
             if (isPalindrome) {
+                words.add(word);
+            }
+        }
+        
+        return words;
+    }
+    
+    public List<String> wordsWhichContainAllVowels() throws FileNotFoundException {
+        char[] vowels = "aeiouyäö".toCharArray();
+        List<String> words = new ArrayList<String>();
+        Scanner reader = new Scanner(file, "UTF-8");
+        
+        while (reader.hasNext()) {
+            String word = reader.next();
+            boolean containsAllVowels = true;
+            
+            for (char vowel : vowels) {
+                if (!word.contains("" + vowel)) {
+                    containsAllVowels = false;
+                    break;
+                }
+            }
+            
+            if (containsAllVowels) {
                 words.add(word);
             }
         }
