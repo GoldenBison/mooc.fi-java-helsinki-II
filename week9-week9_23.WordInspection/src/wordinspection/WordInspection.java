@@ -2,6 +2,8 @@ package wordinspection;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class WordInspection {
@@ -22,5 +24,20 @@ public class WordInspection {
         }
         
         return nWords;
+    }
+    
+    public List<String> wordsContainingZ() throws FileNotFoundException {
+        List<String> zWords = new ArrayList<String>();
+        Scanner reader = new Scanner(file, "UTF-8");
+        
+        while (reader.hasNext()) {
+            String word = reader.next();
+            
+            if (word.contains("z")) {
+                zWords.add(word);
+            }
+        }
+        
+        return zWords;
     }
 }
