@@ -15,15 +15,15 @@ public class UserInterface {
     }
     
     public void printMenu() {
-        System.out.println("phone search");
-        System.out.println("available operations:");
-        System.out.println(" 1 add a number");
-        System.out.println(" 2 search for a number");
-        System.out.println(" 3 search for a person by phone number");
-        System.out.println(" 4 add an address");
-        System.out.println(" 5 search for personal information");
-        System.out.println(" 6 delete personal information");
-        System.out.println(" 7 filtered listing");
-        System.out.println(" x quit");
+        System.out.println("phone search\n"
+                + "available operations:\n"
+                + " 1 add a number\n"
+                + " 2 search for a number\n"
+                + " 3 search for a person by phone number\n"
+                + " 4 add an address\n"
+                + " 5 search for personal information\n"
+                + " 6 delete personal information\n"
+                + " 7 filtered listing\n"
+                + " x quit\n");
     }
 }
