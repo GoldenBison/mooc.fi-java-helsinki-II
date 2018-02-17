@@ -1,5 +1,6 @@
 package PhoneSearch;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -9,6 +10,12 @@ public class PhoneBook {
     private Map<String, Set<String>> numberByName;
     private Map<String, String> nameByNumber;
     private Map<String, Address> addressByName;
+    
+    public PhoneBook() {
+        this.numberByName = new HashMap<String, Set<String>>();
+        this.nameByNumber = new HashMap<String, String>();
+        this.addressByName = new HashMap<String, Address>();
+    }
     
     public void addNumber(String name, String number) {
         if (!numberByName.containsKey(name)) {
