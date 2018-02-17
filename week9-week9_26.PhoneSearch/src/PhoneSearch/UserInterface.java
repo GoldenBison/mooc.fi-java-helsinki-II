@@ -97,7 +97,10 @@ public class UserInterface {
     }
 
     private void deletePersonalInfo() {
+        System.out.print("whose information: ");
+        String name = scanner.nextLine();
         
+        phoneBook.deletePersonalInfo(name);
     }
 
     private void filteredListing() {

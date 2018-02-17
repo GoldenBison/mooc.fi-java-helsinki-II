@@ -66,7 +66,13 @@ public class PhoneBook {
     }
 
     public void deletePersonalInfo(String name) {
+        // Order is important because we need to access the phone numbers
+        for (String number : numberByName.get(name)) {
+            nameByNumber.remove(number);
+        }
         
+        numberByName.remove(name);
+        addressByName.remove(name);
     }
 
     public void filteredListing(String keyword) {
