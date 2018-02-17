@@ -5,9 +5,11 @@ import java.util.Scanner;
 public class UserInterface {
     
     private Scanner scanner;
+    private PhoneBook phoneBook;
     
     public UserInterface() {
         this.scanner = new Scanner(System.in);
+        this.phoneBook = new PhoneBook();
     }
     
     public void start() {
@@ -51,5 +53,38 @@ public class UserInterface {
                 filteredListing();
             }
         }
+    }
+
+    private void addNumber() {
+        System.out.print("whose number: ");
+        String name = scanner.nextLine();
+        System.out.print("number: ");
+        String number = scanner.nextLine();
+        
+        phoneBook.addNumber(name, number);
+    }
+
+    private void searchNumber() {
+        
+    }
+
+    private void searchPersonByNumber() {
+        
+    }
+
+    private void addAddress() {
+        
+    }
+
+    private void searchPersonalInfo() {
+        
+    }
+
+    private void deletePersonalInfo() {
+        
+    }
+
+    private void filteredListing() {
+        
     }
 }
