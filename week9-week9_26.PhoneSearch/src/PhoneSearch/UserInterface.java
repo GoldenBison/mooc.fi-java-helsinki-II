@@ -65,7 +65,10 @@ public class UserInterface {
     }
 
     private void searchNumber() {
+        System.out.print("whose number: ");
+        String name = scanner.nextLine();
         
+        phoneBook.searchNumber(name);
     }
 
     private void searchPersonByNumber() {
