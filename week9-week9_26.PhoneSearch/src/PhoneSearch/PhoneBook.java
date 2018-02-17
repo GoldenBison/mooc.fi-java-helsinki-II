@@ -39,7 +39,7 @@ public class PhoneBook {
     }
 
     public void addAddress(String name, String street, String city) {
-        
+        addressByName.put(name, new Address(street, city));
     }
 
     public void searchPersonalInfo(String name) {

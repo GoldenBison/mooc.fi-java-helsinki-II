@@ -79,7 +79,14 @@ public class UserInterface {
     }
 
     private void addAddress() {
+        System.out.print("whose address: ");
+        String name = scanner.nextLine();
+        System.out.print("street: ");
+        String street = scanner.nextLine();
+        System.out.print("city: ");
+        String city = scanner.nextLine();
         
+        phoneBook.addAddress(name, street, city);
     }
 
     private void searchPersonalInfo() {
