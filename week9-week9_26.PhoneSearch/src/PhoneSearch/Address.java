@@ -17,4 +17,8 @@ public class Address {
     public String getCity() {
         return city;
     }
+    
+    public String toString() {
+        return street + " " + city;
+    }
 }
