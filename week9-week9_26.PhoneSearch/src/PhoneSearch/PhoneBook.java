@@ -31,7 +31,11 @@ public class PhoneBook {
     }
 
     public void searchPersonByNumber(String number) {
-        
+        if (nameByNumber.containsKey(number)) {
+            System.out.println(" " + nameByNumber.get(number));
+        } else {
+            System.out.println(" not found");
+        }
     }
 
     public void addAddress(String name, String street, String city) {

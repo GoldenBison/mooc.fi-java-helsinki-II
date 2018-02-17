@@ -72,7 +72,10 @@ public class UserInterface {
     }
 
     private void searchPersonByNumber() {
+        System.out.print("number: ");
+        String number = scanner.nextLine();
         
+        phoneBook.searchPersonByNumber(number);
     }
 
     private void addAddress() {
