@@ -90,7 +90,10 @@ public class UserInterface {
     }
 
     private void searchPersonalInfo() {
+        System.out.print("whose information: ");
+        String name = scanner.nextLine();
         
+        phoneBook.searchPersonalInfo(name);
     }
 
     private void deletePersonalInfo() {

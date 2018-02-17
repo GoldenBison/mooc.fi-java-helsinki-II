@@ -14,9 +14,11 @@ public class PhoneBook {
         if (!numberByName.containsKey(name)) {
             numberByName.put(name, new HashSet<String>());
         }
+        
         if (!nameByNumber.containsKey(number)) {
             nameByNumber.put(number, name);
         }
+        
         numberByName.get(name).add(number);
     }
     
@@ -43,7 +45,24 @@ public class PhoneBook {
     }
 
     public void searchPersonalInfo(String name) {
-        
+        if (!addressByName.containsKey(name) && !numberByName.containsKey(name)) {
+            System.out.println("  not found");
+        } else {
+            if (addressByName.containsKey(name)) {
+                System.out.println("address: " + addressByName.get(name));
+            } else {
+                System.out.println("address not found");
+            }
+            
+            if (numberByName.containsKey(name)) {
+                System.out.println("  phone numbers:");
+                for (String number : numberByName.get(name)) {
+                    System.out.println("   " + number);
+                }
+            } else {
+                System.out.println("  phone number not found");
+            }
+        }
     }
 
     public void deletePersonalInfo(String name) {
