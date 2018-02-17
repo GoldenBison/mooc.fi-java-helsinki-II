@@ -14,6 +14,9 @@ public class PhoneBook {
         if (!numberByName.containsKey(name)) {
             numberByName.put(name, new HashSet<String>());
         }
+        if (!nameByNumber.containsKey(number)) {
+            nameByNumber.put(number, name);
+        }
         numberByName.get(name).add(number);
     }
     
