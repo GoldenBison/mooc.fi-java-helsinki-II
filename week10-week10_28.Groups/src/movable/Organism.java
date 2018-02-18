@@ -9,15 +9,15 @@ public class Organism implements Movable {
         this.x = x;
         this.y = y;
     }
-    
-    @Override
-    public String toString() {
-        return "x: " + x + "y: " + y;
-    }
 
     @Override
     public void move(int dx, int dy) {
         x += dx;
         y += dy;
+    }
+    
+    @Override
+    public String toString() {
+        return "x: " + x + "; y: " + y;
     }
 }
