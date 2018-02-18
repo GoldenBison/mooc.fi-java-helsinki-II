@@ -27,12 +27,12 @@ public class UserInterface {
                 + " 5 search for personal information\n"
                 + " 6 delete personal information\n"
                 + " 7 filtered listing\n"
-                + " x quit\n");
+                + " x quit");
     }
     
     public void getCommand() {
         while (true) {
-            System.out.print("command: ");
+            System.out.print("\ncommand: ");
             String command = scanner.nextLine();
             
             if (command.equals("x")) {
@@ -104,6 +104,9 @@ public class UserInterface {
     }
 
     private void filteredListing() {
+        System.out.print("keyword (if empty, all listed): ");
+        String keyword = scanner.nextLine();
         
+        phoneBook.filteredListing(keyword);
     }
 }

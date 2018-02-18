@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 public class PhoneBook {
 
@@ -56,9 +57,9 @@ public class PhoneBook {
             System.out.println("  not found");
         } else {
             if (addressByName.containsKey(name)) {
-                System.out.println("address: " + addressByName.get(name));
+                System.out.println("  address: " + addressByName.get(name));
             } else {
-                System.out.println("address not found");
+                System.out.println("  address unknown");
             }
             
             if (numberByName.containsKey(name)) {
@@ -74,15 +75,35 @@ public class PhoneBook {
 
     public void deletePersonalInfo(String name) {
         // Order is important because we need to access the phone numbers
-        for (String number : numberByName.get(name)) {
-            nameByNumber.remove(number);
+        if (numberByName.containsKey(name)) {
+            for (String number : numberByName.get(name)) {
+                nameByNumber.remove(number);
+            }
+
+            numberByName.remove(name);
         }
         
-        numberByName.remove(name);
-        addressByName.remove(name);
+        if (addressByName.containsKey(name)) {
+            addressByName.remove(name);
+        }
     }
 
     public void filteredListing(String keyword) {
+        TreeMap<String, Set<String>> numberByNameSorted = 
+                new TreeMap<String, Set<String>>(numberByName);
+        boolean found = false;
         
+        for (String name : numberByNameSorted.keySet()) {
+            if (name.contains(keyword) || (addressByName.containsKey(name) 
+                    && addressByName.get(name).addressContainsKeyword(keyword))) {
+                found = true;
+                System.out.println("\n " + name);
+                searchPersonalInfo(name);
+            }
+        }
+        
+        if (!found) {
+            System.out.println(" keyword not found");
+        }
     }
 }

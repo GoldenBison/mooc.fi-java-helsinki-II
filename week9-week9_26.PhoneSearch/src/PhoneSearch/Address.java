@@ -18,6 +18,15 @@ public class Address {
         return city;
     }
     
+    public boolean addressContainsKeyword(String keyword) {
+        if (street.contains(keyword) || city.contains(keyword)) {
+            return true;
+        }
+        
+        return false;
+    }
+    
+    @Override
     public String toString() {
         return street + " " + city;
     }
