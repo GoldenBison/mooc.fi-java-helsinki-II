@@ -15,6 +15,14 @@ public class Farm implements Alive {
         this.cows = new ArrayList<Cow>();
     }
     
+    public String getOwner() {
+        return owner;
+    }
+    
+    public void installMilkingRobot(MilkingRobot milkingRobot) {
+        barn.installMilkingRobot(milkingRobot);
+    }
+    
     public void addCow(Cow cow) {
         cows.add(cow);
     }

@@ -40,7 +40,8 @@ public class Cow implements Alive, Milkable {
     
     @Override
     public String toString() {
-        return name + " " + milkAmount + "/" + udderCapacity;
+        return name + " " + Math.ceil(milkAmount) + "/" 
+                + Math.ceil(udderCapacity);
     }
 
     @Override
