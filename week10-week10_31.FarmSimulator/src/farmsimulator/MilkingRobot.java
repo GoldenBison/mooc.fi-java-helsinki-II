@@ -14,7 +14,7 @@ public class MilkingRobot {
     
     void milk(Milkable milkable) {
         if (tank == null) {
-            throw new IllegalStateException("The MilkingRobot hasn't been installed");
+            throw new IllegalStateException("Bulk tank not connected");
         }
         
         this.tank.addToTank(milkable.milk());
